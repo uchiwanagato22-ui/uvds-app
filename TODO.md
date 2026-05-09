@@ -1,0 +1,5 @@
+- [x] Lancer `flutter clean`
+- [x] Lancer `flutter pub get`
+- [x] Lancer `flutter build apk --release`
+- [ ] Vérifier que les APK sont générés dans `build/app/outputs/flutter-apk/`
+- [ ] (Optionnel) Donner la commande pour installer l’APK sur un appareil branché

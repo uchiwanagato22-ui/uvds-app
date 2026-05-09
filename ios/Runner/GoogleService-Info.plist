@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAFoulOb5DqdZLO62XvSFFyzmzKgGO5WIY</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.uvdsApp</string>
+	<key>CLIENT_ID</key>
+	<string>145848279394-3c07533253bb2664f9cc3b.apps.googleusercontent.com</string>
+	<key>DATABASE_URL</key>
+	<string>https://uvds-c316e-default-rtdb.firebaseio.com</string>
+	<key>GCM_SENDER_ID</key>
+	<string>145848279394</string>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:145848279394:ios:3c07533253bb2664f9cc3b</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>MESSAGING_SENDER_ID</key>
+	<string>145848279394</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>PROJECT_ID</key>
+	<string>uvds-c316e</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.145848279394-3c07533253bb2664f9cc3b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>uvds-c316e.appspot.com</string>
+</dict>
+</plist>

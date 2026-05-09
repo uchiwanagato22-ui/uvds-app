@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+ // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBtnRpoqJiDmctlSDjRpxmWusqDkV-0VuU",
+  authDomain: "uvdsapp.firebaseapp.com",
+  projectId: "uvdsapp",
+  storageBucket: "uvdsapp.firebasestorage.app",
+  messagingSenderId: "853848624779",
+  appId: "1:853848624779:web:fde51c1cc8ae76805d8e8e",
+  measurementId: "G-9D9XPBW6K5"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
+
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
