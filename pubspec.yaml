@@ -9,22 +9,36 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
   cupertino_icons: ^1.0.8
-  firebase_core: ^3.6.0
+
+  # 🔥 FIREBASE (aligné et stable)
+  firebase_core: ^3.15.0
   firebase_auth: ^5.3.0
-  cloud_firestore: ^5.4.0
+  cloud_firestore: ^5.6.0
   firebase_storage: ^12.3.0
+
+  # 🌐 Network / utils
   connectivity_plus: ^6.0.0
+  http: ^1.2.0
+
+  # 📷 Media
   image_picker: ^1.1.0
-  share_plus: ^9.0.0
+
+  # 📤 SHARE FIX (important)
+  share_plus: ^13.1.0
+
+  # 🗺️ Maps & location
   google_maps_flutter: ^2.5.0
   geolocator: ^11.0.0
+
+  # 📊 Charts
   fl_chart: ^0.68.0
-  http: ^1.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
   flutter_lints: ^4.0.0
   flutter_launcher_icons: ^0.14.0
 
@@ -38,5 +52,6 @@ flutter_icons:
 
 flutter:
   uses-material-design: true
+
   assets:
     - assets/images/
