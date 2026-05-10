@@ -10,7 +10,7 @@ import 'package:share_plus/share_plus.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'firebase_config.dart';
+import 'firebase_options.dart';
 
 // ─────────────────────────────────────────
 // MAIN
@@ -227,9 +227,9 @@ class _SplashScreenState extends State<SplashScreen>
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(30),
-                    border: Border.all(color: Colors.white.withOpacity(0.3)),
+                    border: Border.all(color: Colors.white.withValues(alpha: 0.3)),
                   ),
                   child: const Text(
                     'ENSEMBLE POUR UN AVENIR MEILLEUR',
@@ -247,7 +247,7 @@ class _SplashScreenState extends State<SplashScreen>
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 11,
-                    color: Colors.white.withOpacity(0.75),
+                    color: Colors.white.withValues(alpha: 0.75),
                   ),
                 ),
                 const SizedBox(height: 48),
@@ -255,7 +255,7 @@ class _SplashScreenState extends State<SplashScreen>
                   width: 40,
                   height: 40,
                   child: CircularProgressIndicator(
-                    color: Colors.white.withOpacity(0.6),
+                    color: Colors.white.withValues(alpha: 0.6),
                     strokeWidth: 2,
                   ),
                 ),
@@ -288,7 +288,7 @@ class _LoginScreenState extends State<LoginScreen> {
       return;
     }
     final conn = await Connectivity().checkConnectivity();
-    if (conn == ConnectivityResult.none) {
+    if (conn.contains(ConnectivityResult.none)) {
       _snack('Pas de connexion');
       return;
     }
@@ -923,7 +923,7 @@ class _StatChip extends StatelessWidget {
   Widget build(BuildContext context) => Container(
     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
     decoration: BoxDecoration(
-      color: Colors.white.withOpacity(0.2),
+      color: Colors.white.withValues(alpha: 0.2),
       borderRadius: BorderRadius.circular(20),
     ),
     child: Row(
@@ -951,7 +951,7 @@ class _QuickStat extends StatelessWidget {
     builder: (_, snap) => Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: Colors.grey.shade200),
       ),
@@ -1001,9 +1001,9 @@ class _QuickAction extends StatelessWidget {
     child: Container(
       padding: const EdgeInsets.symmetric(vertical: 14),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withOpacity(0.3)),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [
@@ -1044,7 +1044,7 @@ class _ActivityCard extends StatelessWidget {
     ),
     child: ListTile(
       leading: CircleAvatar(
-        backgroundColor: color.withOpacity(0.15),
+        backgroundColor: color.withValues(alpha: 0.15),
         child: Icon(icon, color: color, size: 22),
       ),
       title: Text(
@@ -1171,7 +1171,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     if (_filter == 'Membres') {
                       return ListTile(
                         leading: CircleAvatar(
-                          backgroundColor: UVDSColors.primary.withOpacity(0.2),
+                          backgroundColor: UVDSColors.primary.withValues(alpha: 0.2),
                           child: Text(
                             (data['name'] ?? 'M')[0].toUpperCase(),
                             style: const TextStyle(
@@ -1472,7 +1472,7 @@ class _PostCard extends StatelessWidget {
             child: Row(
               children: [
                 CircleAvatar(
-                  backgroundColor: UVDSColors.primary.withOpacity(0.2),
+                  backgroundColor: UVDSColors.primary.withValues(alpha: 0.2),
                   child: Text(
                     author[0].toUpperCase(),
                     style: const TextStyle(
@@ -1673,7 +1673,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
                       margin: const EdgeInsets.only(bottom: 12),
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: Theme.of(context).cardColor,
+                        color: Theme.of(context).colorScheme.surface,
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(color: Colors.grey.shade200),
                       ),
@@ -1682,7 +1682,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
                         children: [
                           CircleAvatar(
                             radius: 16,
-                            backgroundColor: UVDSColors.primary.withOpacity(
+                            backgroundColor: UVDSColors.primary.withValues(alpha: 
                               0.2,
                             ),
                             child: Text(
@@ -1722,7 +1722,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
             decoration: BoxDecoration(
-              color: Theme.of(context).cardColor,
+              color: Theme.of(context).colorScheme.surface,
               border: Border(top: BorderSide(color: Colors.grey.shade200)),
             ),
             child: Row(
@@ -1983,7 +1983,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                         width: 48,
                         height: 48,
                         decoration: BoxDecoration(
-                          color: color.withOpacity(0.15),
+                          color: color.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Icon(Icons.folder, color: color),
@@ -2044,7 +2044,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: color.withOpacity(0.12),
+                          color: color.withValues(alpha: 0.12),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
@@ -2255,7 +2255,7 @@ class _ChatScreenState extends State<ChatScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
             decoration: BoxDecoration(
-              color: Theme.of(context).cardColor,
+              color: Theme.of(context).colorScheme.surface,
               border: Border(top: BorderSide(color: Colors.grey.shade200)),
             ),
             child: Row(
@@ -2336,7 +2336,7 @@ class _ChatBubble extends StatelessWidget {
           if (!isMe) ...[
             CircleAvatar(
               radius: 14,
-              backgroundColor: UVDSColors.primary.withOpacity(0.2),
+              backgroundColor: UVDSColors.primary.withValues(alpha: 0.2),
               child: Text(
                 author[0].toUpperCase(),
                 style: const TextStyle(
@@ -2376,7 +2376,7 @@ class _ChatBubble extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: isMe
                       ? UVDSColors.primary
-                      : Theme.of(context).cardColor,
+                      : Theme.of(context).colorScheme.surface,
                   borderRadius: BorderRadius.only(
                     topLeft: const Radius.circular(16),
                     topRight: const Radius.circular(16),
@@ -2385,7 +2385,7 @@ class _ChatBubble extends StatelessWidget {
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 4,
                       offset: const Offset(0, 2),
                     ),
@@ -2440,7 +2440,7 @@ class VideoCallScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
-                  color: UVDSColors.primary.withOpacity(0.2),
+                  color: UVDSColors.primary.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Icon(
@@ -2515,7 +2515,7 @@ class StatsScreen extends StatelessWidget {
                 height: 200,
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).cardColor,
+                  color: Theme.of(context).colorScheme.surface,
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(color: Colors.grey.shade200),
                 ),
@@ -2589,7 +2589,7 @@ class StatsScreen extends StatelessWidget {
                 height: 220,
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).cardColor,
+                  color: Theme.of(context).colorScheme.surface,
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(color: Colors.grey.shade200),
                 ),
@@ -2745,9 +2745,9 @@ class _StatCard extends StatelessWidget {
     builder: (_, snap) => Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.08),
+        color: color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Column(
         children: [
@@ -2827,7 +2827,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     CircleAvatar(
                       radius: 52,
-                      backgroundColor: UVDSColors.primary.withOpacity(0.2),
+                      backgroundColor: UVDSColors.primary.withValues(alpha: 0.2),
                       backgroundImage: photoUrl.isNotEmpty
                           ? NetworkImage(photoUrl)
                           : null,
@@ -2891,7 +2891,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     vertical: 4,
                   ),
                   decoration: BoxDecoration(
-                    color: UVDSColors.primary.withOpacity(0.12),
+                    color: UVDSColors.primary.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
@@ -2952,7 +2952,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     borderRadius: BorderRadius.circular(12),
                     side: BorderSide(color: Colors.grey.shade200),
                   ),
-                  tileColor: Theme.of(context).cardColor,
+                  tileColor: Theme.of(context).colorScheme.surface,
                 ),
               ),
               const SizedBox(height: 32),
@@ -2989,7 +2989,7 @@ class _PersonalStat extends StatelessWidget {
     builder: (_, snap) => Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: Colors.grey.shade200),
       ),
@@ -3026,7 +3026,7 @@ class _ProfileTile extends StatelessWidget {
     margin: const EdgeInsets.only(bottom: 12),
     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
     decoration: BoxDecoration(
-      color: Theme.of(context).cardColor,
+      color: Theme.of(context).colorScheme.surface,
       borderRadius: BorderRadius.circular(12),
       border: Border.all(color: Colors.grey.shade200),
     ),
@@ -3079,7 +3079,7 @@ class MembersScreen extends StatelessWidget {
                 ),
                 child: ListTile(
                   leading: CircleAvatar(
-                    backgroundColor: UVDSColors.primary.withOpacity(0.2),
+                    backgroundColor: UVDSColors.primary.withValues(alpha: 0.2),
                     backgroundImage: photoUrl.isNotEmpty
                         ? NetworkImage(photoUrl)
                         : null,
@@ -3106,7 +3106,7 @@ class MembersScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: isAdmin
                           ? Colors.orange.shade50
-                          : UVDSColors.primary.withOpacity(0.1),
+                          : UVDSColors.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text(
@@ -3197,12 +3197,12 @@ class NotificationsScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
                   color: isNew
-                      ? UVDSColors.primary.withOpacity(0.07)
-                      : Theme.of(context).cardColor,
+                      ? UVDSColors.primary.withValues(alpha: 0.07)
+                      : Theme.of(context).colorScheme.surface,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
                     color: isNew
-                        ? UVDSColors.primary.withOpacity(0.3)
+                        ? UVDSColors.primary.withValues(alpha: 0.3)
                         : Colors.grey.shade200,
                   ),
                 ),
@@ -3332,7 +3332,7 @@ class AdminScreen extends StatelessWidget {
                     ),
                     child: ListTile(
                       leading: CircleAvatar(
-                        backgroundColor: UVDSColors.primary.withOpacity(0.2),
+                        backgroundColor: UVDSColors.primary.withValues(alpha: 0.2),
                         child: Text(
                           (data['name'] ?? 'M')[0].toUpperCase(),
                           style: const TextStyle(
@@ -3391,7 +3391,7 @@ class AdminScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: isAdmin
                                 ? Colors.orange.shade50
-                                : UVDSColors.primary.withOpacity(0.1),
+                                : UVDSColors.primary.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Text(
